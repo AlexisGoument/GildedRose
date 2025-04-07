@@ -32,18 +32,18 @@ public class GildedRoseTest
         Assert.That(items[0].Quality, Is.EqualTo(0));
     }
 
-    // [Test]
-    // public void UpdateQuality_WithConjuredCommonItem_ShouldDecreaseQualityTwice()
-    // {
-    //     var items = new List<Item> { new() { Name = "Conjured +5 Dexterity Vest", SellIn = 10, Quality = 20 } };
-    //     var app = new GildedRose(items);
-    //
-    //     app.UpdateQuality();
-    //
-    //     Assert.That(items[0].Name, Is.EqualTo("Conjured +5 Dexterity Vest"));
-    //     Assert.That(items[0].SellIn, Is.EqualTo(9));
-    //     Assert.That(items[0].Quality, Is.EqualTo(18));
-    // }
+    [Test]
+    public void UpdateQuality_WithConjuredCommonItem_ShouldDecreaseQualityTwice()
+    {
+        var items = new List<Item> { new() { Name = "Conjured +5 Dexterity Vest", SellIn = 10, Quality = 20 } };
+        var app = new GildedRose(items);
+    
+        app.UpdateQuality();
+    
+        Assert.That(items[0].Name, Is.EqualTo("Conjured +5 Dexterity Vest"));
+        Assert.That(items[0].SellIn, Is.EqualTo(9));
+        Assert.That(items[0].Quality, Is.EqualTo(18));
+    }
 
     [Test]
     public void UpdateQuality_WithCommonItemWhenNegativeSellIn_ShouldDecreaseQualityTwice()
